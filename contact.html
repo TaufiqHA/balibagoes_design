@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BaliBagoes - Marketplace Produk Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#3176FF", secondary: "#0A2463" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="text-2xl font-['Pacifico'] text-primary"
+          >BaliBagoes</a
+        >
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="index.html"
+            class="text-gray-800 hover:text-primary font-medium"
+            >Beranda</a
+          >
+          <a
+            href="products.html"
+            class="text-gray-800 hover:text-primary font-medium"
+            >Produk</a
+          >
+          <a
+            href="about.html"
+            class="text-gray-800 hover:text-primary font-medium"
+            >Tentang Kami</a
+          >
+          <a href="contact.html" class="text-gray-800 text-primary font-medium"
+            >Kontak</a
+          >
+        </nav>
+        <div class="flex items-center space-x-4">
+          <button
+            id="cartToggle"
+            class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
+          >
+            <i class="ri-shopping-cart-line ri-lg"></i>
+            <span
+              id="cartCount"
+              class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+              >0</span
+            >
+          </button>
+          <!-- Mobile Menu Toggle -->
+          <button
+            id="mobileMenuToggle"
+            class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary md:hidden"
+          >
+            <i class="ri-menu-line ri-lg"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Navigation -->
+      <nav id="mobileMenu" class="hidden px-4 py-4 bg-white md:hidden">
+        <div class="flex flex-col space-y-4">
+          <a
+            href="index.html"
+            class="text-gray-800 hover:text-primary font-medium"
+            >Beranda</a
+          >
+          <a
+            href="products.html"
+            class="text-gray-800 hover:text-primary font-medium"
+            >Produk</a
+          >
+          <a
+            href="about.html"
+            class="text-gray-800 hover:text-primary font-medium"
+            >Tentang Kami</a
+          >
+          <a href="contact.html" class="text-gray-800 text-primary font-medium"
+            >Kontak</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <section class="gradient-bg py-20 md:py-32">
+      <div class="container mx-auto px-4 pt-24">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Hubungi Kami
+          </h1>
+          <p class="text-lg md:text-xl text-blue-100 mb-8">
+            Kami siap membantu Anda dengan pertanyaan, saran, atau kebutuhan
+            informasi tentang produk digital kami.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div class="bg-white rounded-lg shadow-lg p-8 md:p-10">
+              <h2 class="text-2xl font-bold text-gray-800 mb-6">Kirim Pesan</h2>
+              <form class="contact-form space-y-6">
+                <div class="space-y-2">
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-gray-700"
+                    >Nama Lengkap</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                    placeholder="Masukkan nama lengkap Anda"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                    placeholder="Masukkan alamat email Anda"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <label
+                    for="subject"
+                    class="block text-sm font-medium text-gray-700"
+                    >Subjek</label
+                  >
+                  <input
+                    type="text"
+                    id="subject"
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                    placeholder="Masukkan subjek pesan"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-gray-700"
+                    >Pesan</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="5"
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none"
+                    placeholder="Tulis pesan Anda di sini..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full bg-primary hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-button transition-colors whitespace-nowrap"
+                >
+                  Kirim Pesan
+                </button>
+              </form>
+            </div>
+
+            <div class="space-y-10">
+              <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                  Informasi Kontak
+                </h2>
+                <div class="space-y-6">
+                  <div class="flex items-start">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4"
+                    >
+                      <i class="ri-map-pin-line ri-lg"></i>
+                    </div>
+                    <div>
+                      <h3 class="text-lg font-medium text-gray-800">Alamat</h3>
+                      <p class="text-gray-600 mt-1">
+                        Jalan Raya Kuta No. 88, Kuta, Badung, Bali 80361
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4"
+                    >
+                      <i class="ri-phone-line ri-lg"></i>
+                    </div>
+                    <div>
+                      <h3 class="text-lg font-medium text-gray-800">Telepon</h3>
+                      <p class="text-gray-600 mt-1">+62 361 754321</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4"
+                    >
+                      <i class="ri-mail-line ri-lg"></i>
+                    </div>
+                    <div>
+                      <h3 class="text-lg font-medium text-gray-800">Email</h3>
+                      <p class="text-gray-600 mt-1">info@balibagoes.com</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4"
+                    >
+                      <i class="ri-time-line ri-lg"></i>
+                    </div>
+                    <div>
+                      <h3 class="text-lg font-medium text-gray-800">
+                        Jam Operasional
+                      </h3>
+                      <p class="text-gray-600 mt-1">
+                        Senin - Jumat: 09.00 - 17.00 WITA
+                      </p>
+                      <p class="text-gray-600">Sabtu: 09.00 - 14.00 WITA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                  Ikuti Kami
+                </h2>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="w-12 h-12 flex items-center justify-center bg-blue-100 hover:bg-blue-200 rounded-full text-primary transition-colors"
+                  >
+                    <i class="ri-facebook-fill ri-lg"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-12 h-12 flex items-center justify-center bg-blue-100 hover:bg-blue-200 rounded-full text-primary transition-colors"
+                  >
+                    <i class="ri-instagram-line ri-lg"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-12 h-12 flex items-center justify-center bg-blue-100 hover:bg-blue-200 rounded-full text-primary transition-colors"
+                  >
+                    <i class="ri-twitter-x-line ri-lg"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-12 h-12 flex items-center justify-center bg-blue-100 hover:bg-blue-200 rounded-full text-primary transition-colors"
+                  >
+                    <i class="ri-youtube-line ri-lg"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+            Pertanyaan Umum
+          </h2>
+          <div class="space-y-6">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+              <h3 class="text-lg font-medium text-gray-800 mb-2">
+                Bagaimana cara mengunduh produk digital setelah pembelian?
+              </h3>
+              <p class="text-gray-600">
+                Setelah pembayaran berhasil, Anda akan menerima email konfirmasi
+                dengan tautan unduhan. Anda juga dapat mengakses produk digital
+                yang dibeli melalui akun BaliBagoes Anda di bagian "Pesanan
+                Saya".
+              </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6">
+              <h3 class="text-lg font-medium text-gray-800 mb-2">
+                Apakah ada batasan penggunaan untuk produk digital?
+              </h3>
+              <p class="text-gray-600">
+                Setiap produk digital memiliki ketentuan lisensi yang berbeda.
+                Informasi lengkap tentang lisensi dan batasan penggunaan dapat
+                dilihat pada halaman detail produk sebelum pembelian.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6">
+              <h3 class="text-lg font-medium text-gray-800 mb-2">
+                Metode pembayaran apa saja yang tersedia?
+              </h3>
+              <p class="text-gray-600">
+                Kami menerima berbagai metode pembayaran termasuk kartu
+                kredit/debit, transfer bank, e-wallet (OVO, GoPay, DANA), dan
+                virtual account. Semua transaksi dilindungi dengan sistem
+                keamanan terkini.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6">
+              <h3 class="text-lg font-medium text-gray-800 mb-2">
+                Bagaimana kebijakan pengembalian dana untuk produk digital?
+              </h3>
+              <p class="text-gray-600">
+                Karena sifat produk digital yang tidak dapat dikembalikan, kami
+                tidak menawarkan pengembalian dana setelah produk diunduh.
+                Namun, jika Anda mengalami masalah teknis, tim dukungan kami
+                siap membantu Anda.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <a
+              href="#"
+              class="text-2xl font-['Pacifico'] text-white mb-4 inline-block"
+              >BaliBagoes</a
+            >
+            <p class="text-gray-400 mb-4">
+              Platform terbaik untuk produk digital premium dengan kualitas
+              terjamin.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Kategori</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Ebook</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Software</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Kursus Online</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Template & Desain</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Audio & Musik</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Informasi</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="about.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Kebijakan Privasi</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Syarat & Ketentuan</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Berlangganan</h3>
+            <p class="text-gray-400 mb-4">
+              Dapatkan info terbaru dan penawaran spesial
+            </p>
+            <div class="flex mb-4">
+              <input
+                type="email"
+                placeholder="Email Anda"
+                class="flex-1 px-4 py-2 rounded-l-lg border-none focus:outline-none text-gray-800"
+              />
+              <button
+                class="bg-primary text-white px-4 py-2 rounded-r-lg hover:bg-primary/90 transition whitespace-nowrap"
+              >
+                Daftar
+              </button>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <div class="flex items-center bg-gray-800 px-3 py-2 rounded">
+                <i class="ri-visa-fill ri-lg mr-1"></i>
+                <span class="text-sm">Visa</span>
+              </div>
+              <div class="flex items-center bg-gray-800 px-3 py-2 rounded">
+                <i class="ri-mastercard-fill ri-lg mr-1"></i>
+                <span class="text-sm">Mastercard</span>
+              </div>
+              <div class="flex items-center bg-gray-800 px-3 py-2 rounded">
+                <i class="ri-paypal-fill ri-lg mr-1"></i>
+                <span class="text-sm">PayPal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400"
+        >
+          <p>&copy; 2025 BaliBagoes. Hak Cipta Dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".contact-form");
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert(
+              "Terima kasih! Pesan Anda telah dikirim. Kami akan menghubungi Anda segera."
+            );
+            form.reset();
+          });
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const newsletterForm = document.querySelector(
+          "form:not(.contact-form)"
+        );
+        if (newsletterForm) {
+          newsletterForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Terima kasih telah berlangganan newsletter kami!");
+            newsletterForm.reset();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
