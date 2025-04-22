@@ -69,7 +69,7 @@
         >
         <button
           id="login-button"
-          class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
+          class="hidden bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
         >
           Login
         </button>
@@ -412,9 +412,17 @@
                 >
                 <input
                   type="text"
+                  id="onlyLettersInput"
                   class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
                   placeholder="Masukkan nama lengkap"
                 />
+                <script>
+                  document
+                    .getElementById("onlyLettersInput")
+                    .addEventListener("input", function (e) {
+                      this.value = this.value.replace(/[^a-zA-Z]/g, ""); // hanya huruf
+                    });
+                </script>
               </div>
               <div>
                 <label class="block text-sm text-gray-600 mb-1">Email</label>
