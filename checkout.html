@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Pembayaran</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4F46E5", secondary: "#10B981" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f9fafb;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-white shadow-sm">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-['Pacifico'] text-primary"
+            >BaliBagoes</a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Left Column - Order Details -->
+        <div class="w-full lg:w-7/12 bg-white rounded shadow-sm p-6">
+          <h2 class="text-xl font-semibold mb-6">Ringkasan Pesanan</h2>
+          <div class="border-b pb-4">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center">
+                <div
+                  class="w-16 h-16 bg-gray-100 rounded flex items-center justify-center mr-4"
+                >
+                  <i class="ri-t-shirt-line text-gray-500 ri-2x"></i>
+                </div>
+                <div>
+                  <h3 class="font-medium">Kemeja Lengan Panjang Premium</h3>
+                  <p class="text-sm text-gray-500">Ukuran: L, Warna: Navy</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-medium">Rp 299.000</div>
+                <div class="text-sm text-gray-500">x1</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center">
+                <div
+                  class="w-16 h-16 bg-gray-100 rounded flex items-center justify-center mr-4"
+                >
+                  <i class="ri-shirt-line text-gray-500 ri-2x"></i>
+                </div>
+                <div>
+                  <h3 class="font-medium">Kaos Katun Organik</h3>
+                  <p class="text-sm text-gray-500">Ukuran: M, Warna: Putih</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-medium">Rp 149.000</div>
+                <div class="text-sm text-gray-500">x2</div>
+              </div>
+            </div>
+          </div>
+          <h2 class="text-xl font-semibold mt-6 mb-4">Informasi Pengiriman</h2>
+          <form>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label
+                  for="firstName"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Nama Depan</label
+                >
+                <input
+                  type="text"
+                  id="firstName"
+                  class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  value="Budi"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="lastName"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Nama Belakang</label
+                >
+                <input
+                  type="text"
+                  id="lastName"
+                  class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  value="Santoso"
+                  required
+                />
+              </div>
+            </div>
+            <div class="mb-4">
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                value="budi.santoso@email.com"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                for="phone"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Nomor Telepon</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                value="081234567890"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                for="address"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Alamat</label
+              >
+              <input
+                type="text"
+                id="address"
+                class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                value="Jl. Sudirman No. 123"
+                required
+              />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div>
+                <label
+                  for="city"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Kota</label
+                >
+                <input
+                  type="text"
+                  id="city"
+                  class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  value="Jakarta Selatan"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="province"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Provinsi</label
+                >
+                <input
+                  type="text"
+                  id="province"
+                  class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  value="DKI Jakarta"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="postalCode"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Kode Pos</label
+                >
+                <input
+                  type="text"
+                  id="postalCode"
+                  class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  value="12190"
+                  required
+                />
+              </div>
+            </div>
+            <div class="mb-4">
+              <label
+                for="notes"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Catatan Pengiriman (Opsional)</label
+              >
+              <textarea
+                id="notes"
+                rows="3"
+                class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                placeholder="Tambahkan catatan untuk kurir..."
+              ></textarea>
+            </div>
+          </form>
+        </div>
+        <!-- Right Column - Payment Method -->
+        <div class="w-full lg:w-5/12">
+          <div class="bg-white rounded shadow-sm p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-6">Metode Pembayaran</h2>
+            <div class="space-y-4">
+              <div
+                class="border rounded p-4 cursor-pointer hover:border-primary relative"
+              >
+                <input
+                  type="radio"
+                  name="payment"
+                  id="va"
+                  class="absolute opacity-0"
+                  checked
+                />
+                <label for="va" class="flex items-center cursor-pointer">
+                  <div
+                    class="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center mr-3 relative"
+                  >
+                    <div class="w-3 h-3 rounded-full bg-primary absolute"></div>
+                  </div>
+                  <span class="font-medium">Virtual Account</span>
+                </label>
+                <div class="mt-4 grid grid-cols-3 gap-3">
+                  <div
+                    class="border rounded p-2 flex flex-col items-center cursor-pointer hover:border-primary"
+                  >
+                    <div class="w-10 h-10 flex items-center justify-center">
+                      <i class="ri-bank-fill text-blue-800 ri-2x"></i>
+                    </div>
+                    <span class="text-xs mt-1">BCA</span>
+                  </div>
+                  <div
+                    class="border rounded p-2 flex flex-col items-center cursor-pointer hover:border-primary"
+                  >
+                    <div class="w-10 h-10 flex items-center justify-center">
+                      <i class="ri-bank-fill text-red-600 ri-2x"></i>
+                    </div>
+                    <span class="text-xs mt-1">BNI</span>
+                  </div>
+                  <div
+                    class="border rounded p-2 flex flex-col items-center cursor-pointer hover:border-primary"
+                  >
+                    <div class="w-10 h-10 flex items-center justify-center">
+                      <i class="ri-bank-fill text-blue-600 ri-2x"></i>
+                    </div>
+                    <span class="text-xs mt-1">Mandiri</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="border rounded p-4 cursor-pointer hover:border-primary relative"
+              >
+                <input
+                  type="radio"
+                  name="payment"
+                  id="ewallet"
+                  class="absolute opacity-0"
+                />
+                <label for="ewallet" class="flex items-center cursor-pointer">
+                  <div
+                    class="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center mr-3 relative"
+                  >
+                    <div
+                      class="w-3 h-3 rounded-full bg-transparent absolute"
+                    ></div>
+                  </div>
+                  <span class="font-medium">E-Wallet</span>
+                </label>
+                <div class="mt-4 grid grid-cols-3 gap-3">
+                  <div
+                    class="border rounded p-2 flex flex-col items-center cursor-pointer hover:border-primary"
+                  >
+                    <div class="w-10 h-10 flex items-center justify-center">
+                      <i class="ri-wallet-3-fill text-purple-600 ri-2x"></i>
+                    </div>
+                    <span class="text-xs mt-1">OVO</span>
+                  </div>
+                  <div
+                    class="border rounded p-2 flex flex-col items-center cursor-pointer hover:border-primary"
+                  >
+                    <div class="w-10 h-10 flex items-center justify-center">
+                      <i class="ri-wallet-3-fill text-blue-500 ri-2x"></i>
+                    </div>
+                    <span class="text-xs mt-1">DANA</span>
+                  </div>
+                  <div
+                    class="border rounded p-2 flex flex-col items-center cursor-pointer hover:border-primary"
+                  >
+                    <div class="w-10 h-10 flex items-center justify-center">
+                      <i class="ri-wallet-3-fill text-green-500 ri-2x"></i>
+                    </div>
+                    <span class="text-xs mt-1">GoPay</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="border rounded p-4 cursor-pointer hover:border-primary relative"
+              >
+                <input
+                  type="radio"
+                  name="payment"
+                  id="cc"
+                  class="absolute opacity-0"
+                />
+                <label for="cc" class="flex items-center cursor-pointer">
+                  <div
+                    class="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center mr-3 relative"
+                  >
+                    <div
+                      class="w-3 h-3 rounded-full bg-transparent absolute"
+                    ></div>
+                  </div>
+                  <span class="font-medium">Kartu Kredit/Debit</span>
+                </label>
+                <div class="mt-4 flex space-x-3">
+                  <div class="w-10 h-6 flex items-center justify-center">
+                    <i class="ri-visa-fill text-blue-800 ri-2x"></i>
+                  </div>
+                  <div class="w-10 h-6 flex items-center justify-center">
+                    <i class="ri-mastercard-fill text-red-500 ri-2x"></i>
+                  </div>
+                  <div class="w-10 h-6 flex items-center justify-center">
+                    <i class="ri-bank-card-fill text-gray-700 ri-2x"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="border rounded p-4 cursor-pointer hover:border-primary relative"
+              >
+                <input
+                  type="radio"
+                  name="payment"
+                  id="qris"
+                  class="absolute opacity-0"
+                />
+                <label for="qris" class="flex items-center cursor-pointer">
+                  <div
+                    class="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center mr-3 relative"
+                  >
+                    <div
+                      class="w-3 h-3 rounded-full bg-transparent absolute"
+                    ></div>
+                  </div>
+                  <span class="font-medium">QRIS</span>
+                </label>
+                <div class="mt-4 flex justify-center">
+                  <div class="w-16 h-16 flex items-center justify-center">
+                    <i class="ri-qr-code-line text-gray-800 ri-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded shadow-sm p-6">
+            <h2 class="text-xl font-semibold mb-4">Rincian Biaya</h2>
+            <div class="space-y-2 mb-4">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Subtotal Pesanan</span>
+                <span>Rp 597.000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Biaya Pengiriman</span>
+                <span>Rp 20.000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Biaya Layanan</span>
+                <span>Rp 5.000</span>
+              </div>
+            </div>
+            <div class="border-t pt-4 mb-6">
+              <div class="flex justify-between font-semibold text-lg">
+                <span>Total Pembayaran</span>
+                <span class="text-primary">Rp 622.000</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="w-full py-3 bg-primary text-white font-medium rounded-button hover:bg-primary/90 transition-colors flex items-center justify-center whitespace-nowrap"
+            >
+              <i class="ri-secure-payment-line mr-2"></i>
+              Bayar Sekarang
+            </button>
+            <div
+              class="mt-4 flex items-center justify-center text-xs text-gray-500"
+            >
+              <i class="ri-lock-line mr-1"></i>
+              Pembayaran aman dengan enkripsi SSL
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Handle payment method selection
+        const radioButtons = document.querySelectorAll('input[name="payment"]');
+        radioButtons.forEach((radio) => {
+          radio.addEventListener("change", function () {
+            // Reset all radio indicators
+            document
+              .querySelectorAll('input[name="payment"] + label .w-3')
+              .forEach((indicator) => {
+                indicator.classList.remove("bg-primary");
+                indicator.classList.add("bg-transparent");
+              });
+            // Set selected radio indicator
+            if (this.checked) {
+              const indicator = this.nextElementSibling.querySelector(".w-3");
+              indicator.classList.remove("bg-transparent");
+              indicator.classList.add("bg-primary");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
